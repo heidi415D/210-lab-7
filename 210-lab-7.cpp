@@ -9,7 +9,7 @@ const int SIZE = 5;
 
 // function to reverse the array
 string * reverseArray(string* arr, int size){
-    for(int i = 0; i<= size/2; i++){
+    for(int i = 0; i< size/2; i++){
         string temp = *(arr + i);
         *(arr + i) = *(arr + (size - 1 - i));
         *(arr + (size - 1 - i)) = temp;
@@ -19,7 +19,6 @@ string * reverseArray(string* arr, int size){
 
 // function to display the array
 void displayArray(string* arr, int size){
-    cout << "Outputting array elements: ";
     for(int i = 0; i < size; i++){
         cout << *(arr + i) << " ";
     }
@@ -36,15 +35,19 @@ int main(){
     *(names + 4) = "Junio";
 
    // output original
-    cout << "Original array: " << endl;
-    displayArray(names, SIZE);
+    cout << "Original array: ";
+     displayArray(names, SIZE); 
+    cout << endl;
 
     // reverse the array
     names = reverseArray(names, SIZE);
 
     // output reversed
-    cout << "Reversed array: " << endl;
-    displayArray(names, SIZE);
+    cout << "Reversed array: ";
+     displayArray(names, SIZE);
+    cout << endl;
+
+    delete[] names; // free allocated memory
 
     return 0;
 
